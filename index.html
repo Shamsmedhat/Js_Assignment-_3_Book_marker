@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="imgs/bookmark.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="CSS/all.min.css" />
+    <link rel="stylesheet" href="CSS/bootstrap.min.css" />
+    <link rel="stylesheet" href="CSS/style.css" />
+    <title>Bookmarker</title>
+  </head>
+  <body>
+    <div id="myBg"></div>
+    <div id="warning" class="position-absolute"></div>
+    <div class="container-fluid p-0">
+      <h1 class="text-center py-4 my-title">
+        <i class="fa-solid fa-bookmark mx-3"></i>Bookmarker
+      </h1>
+    </div>
+    <div class="container pt-4">
+      <div class="row bookMark">
+        <h2>
+          <i class="fa-solid fa-star fs-5 mx-2"></i>Bookmark your favorite sites
+        </h2>
+        <div class="col-8 m-auto">
+          <div id="yorFavoriteSite">
+            <div id="siteData" class="d-flex flex-wrap flex-column">
+              <label for="siteName" class="py-3">Site Name</label>
+              <input
+                oninput="validateSiteName()"
+                type="text"
+                id="siteName"
+                class="form-control"
+              />
+              <div id="validationTest"></div>
+              <label for="siteUrl" class="py-3">Site URL</label>
+              <input
+                oninput="validateSiteUrl()"
+                type="text"
+                id="siteUrl"
+                class="form-control"
+              />
+              <div id="validationTestUrl"></div>
+              <button
+                id="submitBook"
+                class="btn btn-info w-25 my-4"
+                onclick="addWeb()"
+              >
+                Submit
+              </button>
+            </div>
+          </div>
+          <div class="tabelData">
+            <table class="w-100 table text-center">
+              <thead>
+                <th>Index</th>
+                <th>Website Name</th>
+                <th>Visit</th>
+                <th>Delete</th>
+              </thead>
+              <tbody id="userData"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="JS/bootstrap.bundle.min.js"></script>
+    <script src="JS/index.js"></script>
+  </body>
+</html>
